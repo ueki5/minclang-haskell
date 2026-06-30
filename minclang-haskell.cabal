@@ -1,0 +1,45 @@
+cabal-version:      3.14
+name:               minclang-haskell
+version:            0.1.0.0
+license:            NONE
+author:             ueki5
+maintainer:         ueki005@gmail.com
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+
+common warnings
+    ghc-options: -Wall
+
+library
+    import:           warnings
+    exposed-modules:  Compiler, CodeGen
+    build-depends:    base ^>=4.19.2.0
+    hs-source-dirs:   src
+    default-language: Haskell2010
+
+executable minclang-haskell
+    import:           warnings
+    main-is:          Main.hs
+    build-depends:
+        base ^>=4.19.2.0,
+        minclang-haskell,
+        optparse-applicative,
+        process,
+        directory,
+        filepath
+    hs-source-dirs:   app
+    default-language: Haskell2010
+
+test-suite minclang-haskell-test
+    import:           warnings
+    type:             exitcode-stdio-1.0
+    main-is:          Spec.hs
+    build-depends:
+        base ^>=4.19.2.0,
+        minclang-haskell,
+        hspec,
+        process,
+        temporary,
+        filepath
+    hs-source-dirs:   test
+    default-language: Haskell2010
