@@ -1,4 +1,4 @@
-# minclang-haskell
+# simplang-haskell
 
 算術式を入力として x86-64 ネイティブバイナリを生成するコンパイラ。
 Haskell で実装されており、GCC をリンカとして利用する。
@@ -8,7 +8,7 @@ Haskell で実装されており、GCC をリンカとして利用する。
 ```bash
 cabal build                                          # ビルド
 cabal test                                           # テスト (Hspec)
-cabal run minclang-haskell -- FILE [-o OUTPUT] [-S ASM_FILE]
+cabal run simplang-haskell -- FILE [-o OUTPUT] [-S ASM_FILE]
 ```
 
 - `FILE`: 算術式を含むソースファイル（必須）
